@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCS Unified Portal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root {
+  --deep-purple: #4A3A6B;
+  --purple: #8B6FC0;
+  --blue-purple: #7B8ED8;
+  --coral: #F0919B;
+  --magenta: #C476B8;
+  --lavender: #DED0F0;
+  --lavender-light: #F6F2FB;
+  --bg: #F9F8FC;
+  --surface: #FFFFFF;
+  --text: #2D2D3A;
+  --text-2: #6E6E82;
+  --text-3: #B0B0C0;
+  --border: #EEEBF4;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 1px 3px rgba(74,58,107,.04);
+  --shadow-md: 0 4px 20px rgba(74,58,107,.06);
+  --shadow-lg: 0 8px 40px rgba(74,58,107,.08);
+  --gradient: linear-gradient(135deg, #8B6FC0 0%, #7B8ED8 40%, #F0919B 80%, #F4C5A0 100%);
+  --gradient-pill: linear-gradient(135deg, #8B6FC0, #7B8ED8);
+  /* Tab colors — soft palette */
+  --c1: #8B6FC0; --c2: #7B8ED8; --c3: #5BBAC6; --c4: #F0919B;
+  --c5: #E8A96B; --c6: #6BBF8A; --c7: #C476B8; --c8: #7BA3CC;
+  --c9: #A899D4; --c10: #6B5F8D;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
+
+/* ── Top Bar ── */
+.topbar { height:52px; background:var(--surface); display:flex; align-items:center; padding:0 40px; position:sticky; top:0; z-index:100; border-bottom:1px solid var(--border); }
+.topbar-brand { font-size:15px; font-weight:700; color:var(--text); letter-spacing:-.3px; display:flex; align-items:center; gap:10px; }
+.topbar-brand .brand-dot { width:8px; height:8px; border-radius:50%; background:var(--gradient); }
+.topbar-nav { margin-left:32px; display:flex; gap:0; }
+.topbar-nav a { color:var(--text-2); font-size:13px; font-weight:500; padding:16px 16px; text-decoration:none; border-bottom:2px solid transparent; transition:all .15s; }
+.topbar-nav a:hover { color:var(--text); }
+.topbar-nav a.active { color:var(--purple); border-bottom-color:var(--purple); }
+.topbar-right { margin-left:auto; display:flex; align-items:center; gap:12px; }
+.topbar-right .icon-btn { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background .15s; border:none; background:transparent; }
+.topbar-right .icon-btn:hover { background:var(--lavender-light); }
+.topbar-right .icon-btn svg { width:18px; height:18px; fill:var(--text-2); }
+.avatar { width:32px; height:32px; border-radius:50%; background:var(--gradient); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:600; cursor:pointer; }
+
+/* ── Hero ── */
+.hero { background:#FAFAFE; padding:80px 40px 64px; text-align:center; position:relative; overflow:hidden; }
+.hero::before,.hero::after { content:none; }
+
+/* ── Decorative Blobs ── */
+.blob-container { position:absolute; top:-40px; right:-60px; width:600px; height:500px; pointer-events:none; z-index:0; }
+.blob { position:absolute; border-radius:50%; filter:blur(0px); }
+.blob-1 { width:340px; height:340px; background:rgba(241,128,110,.55); top:10px; right:0; border-radius:62% 38% 46% 54% / 60% 44% 56% 40%; animation:morph1 12s ease-in-out infinite; }
+.blob-2 { width:280px; height:260px; background:rgba(232,92,130,.45); top:80px; right:120px; border-radius:50% 50% 46% 54% / 36% 56% 44% 64%; animation:morph2 14s ease-in-out infinite; }
+.blob-3 { width:200px; height:200px; background:rgba(230,130,178,.35); top:160px; right:20px; border-radius:40% 60% 54% 46% / 52% 40% 60% 48%; animation:morph3 10s ease-in-out infinite; }
+.blob-4 { width:160px; height:160px; background:rgba(246,168,140,.4); top:-10px; right:200px; border-radius:54% 46% 38% 62% / 44% 58% 42% 56%; animation:morph2 16s ease-in-out infinite reverse; }
+.blob-5 { width:120px; height:120px; background:rgba(240,160,200,.3); top:220px; right:260px; border-radius:46% 54% 62% 38% / 56% 42% 58% 44%; animation:morph1 11s ease-in-out infinite reverse; }
+
+@keyframes morph1 {
+  0%,100% { border-radius:62% 38% 46% 54% / 60% 44% 56% 40%; transform:translate(0,0) rotate(0deg); }
+  33% { border-radius:48% 52% 58% 42% / 44% 56% 44% 56%; transform:translate(-8px,12px) rotate(3deg); }
+  66% { border-radius:56% 44% 40% 60% / 52% 48% 52% 48%; transform:translate(6px,-8px) rotate(-2deg); }
+}
+@keyframes morph2 {
+  0%,100% { border-radius:50% 50% 46% 54% / 36% 56% 44% 64%; transform:translate(0,0) rotate(0deg); }
+  33% { border-radius:42% 58% 54% 46% / 50% 40% 60% 50%; transform:translate(10px,6px) rotate(-3deg); }
+  66% { border-radius:58% 42% 48% 52% / 44% 56% 44% 56%; transform:translate(-6px,-10px) rotate(2deg); }
+}
+@keyframes morph3 {
+  0%,100% { border-radius:40% 60% 54% 46% / 52% 40% 60% 48%; transform:translate(0,0) scale(1); }
+  50% { border-radius:56% 44% 46% 54% / 40% 60% 40% 60%; transform:translate(-5px,8px) scale(1.05); }
+}
+.hero h1 { font-size:42px; font-weight:300; color:var(--text); margin-bottom:10px; letter-spacing:-.8px; line-height:1.15; position:relative; z-index:1; }
+.hero h1 strong { background:linear-gradient(135deg, #6B5F8D, #8B6FC0, #C476B8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700; }
+.hero p { font-size:16px; color:var(--text-2); margin-bottom:36px; font-weight:400; line-height:1.5; position:relative; z-index:1; }
+.hero p a { color:var(--purple); text-decoration:none; font-weight:600; }
+.hero p a:hover { text-decoration:underline; }
+.search-box { max-width:620px; margin:0 auto; position:relative; z-index:1; }
+.search-box input { width:100%; height:54px; border:1.5px solid rgba(139,111,192,.15); border-radius:28px; padding:0 56px 0 24px; font-size:15px; color:var(--text); outline:none; transition:all .2s; background:#fff; box-shadow:0 4px 20px rgba(107,95,141,.06); font-family:inherit; }
+.search-box input::placeholder { color:var(--text-3); }
+.search-box input:focus { border-color:var(--purple); box-shadow:0 4px 28px rgba(139,111,192,.12); }
+.search-box .send-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%); width:38px; height:38px; border:none; background:linear-gradient(135deg, #8B6FC0, #7B8ED8); border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform .15s, box-shadow .15s; }
+.search-box .send-btn:hover { transform:translateY(-50%) scale(1.08); box-shadow:0 4px 16px rgba(139,111,192,.25); }
+.search-box .send-btn svg { width:16px; height:16px; fill:#fff; }
+
+/* ── Category Pills ── */
+.cat-bar { padding:28px 40px 0; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+.cat-pill { display:flex; align-items:center; gap:7px; padding:10px 22px; border-radius:28px; border:1.5px solid var(--border); background:var(--surface); font-size:13px; font-weight:500; color:var(--text-2); cursor:pointer; transition:all .2s; white-space:nowrap; box-shadow:var(--shadow-sm); }
+.cat-pill svg { width:15px; height:15px; fill:var(--text-3); flex-shrink:0; transition:fill .2s; }
+.cat-pill:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.cat-pill.active { color:#fff; border-color:transparent; box-shadow:0 4px 20px rgba(0,0,0,.15); transform:translateY(-1px); }
+.cat-pill.active svg { fill:#fff; }
+.cat-pill[data-color="c1"]:hover,.cat-pill[data-color="c1"].active { background:var(--c1); border-color:var(--c1); color:#fff; }
+.cat-pill[data-color="c1"]:hover svg,.cat-pill[data-color="c1"].active svg { fill:#fff; }
+.cat-pill[data-color="c2"]:hover,.cat-pill[data-color="c2"].active { background:var(--c2); border-color:var(--c2); color:#fff; }
+.cat-pill[data-color="c2"]:hover svg,.cat-pill[data-color="c2"].active svg { fill:#fff; }
+.cat-pill[data-color="c3"]:hover,.cat-pill[data-color="c3"].active { background:var(--c3); border-color:var(--c3); color:#fff; }
+.cat-pill[data-color="c3"]:hover svg,.cat-pill[data-color="c3"].active svg { fill:#fff; }
+.cat-pill[data-color="c4"]:hover,.cat-pill[data-color="c4"].active { background:var(--c4); border-color:var(--c4); color:#fff; }
+.cat-pill[data-color="c4"]:hover svg,.cat-pill[data-color="c4"].active svg { fill:#fff; }
+.cat-pill[data-color="c5"]:hover,.cat-pill[data-color="c5"].active { background:var(--c5); border-color:var(--c5); color:#fff; }
+.cat-pill[data-color="c5"]:hover svg,.cat-pill[data-color="c5"].active svg { fill:#fff; }
+.cat-pill[data-color="c6"]:hover,.cat-pill[data-color="c6"].active { background:var(--c6); border-color:var(--c6); color:#fff; }
+.cat-pill[data-color="c6"]:hover svg,.cat-pill[data-color="c6"].active svg { fill:#fff; }
+.cat-pill[data-color="c7"]:hover,.cat-pill[data-color="c7"].active { background:var(--c7); border-color:var(--c7); color:#fff; }
+.cat-pill[data-color="c7"]:hover svg,.cat-pill[data-color="c7"].active svg { fill:#fff; }
+.cat-pill[data-color="c8"]:hover,.cat-pill[data-color="c8"].active { background:var(--c8); border-color:var(--c8); color:#fff; }
+.cat-pill[data-color="c8"]:hover svg,.cat-pill[data-color="c8"].active svg { fill:#fff; }
+.cat-pill[data-color="c9"]:hover,.cat-pill[data-color="c9"].active { background:var(--c9); border-color:var(--c9); color:#fff; }
+.cat-pill[data-color="c9"]:hover svg,.cat-pill[data-color="c9"].active svg { fill:#fff; }
+.cat-pill[data-color="c10"]:hover,.cat-pill[data-color="c10"].active { background:var(--c10); border-color:var(--c10); color:#fff; }
+.cat-pill[data-color="c10"]:hover svg,.cat-pill[data-color="c10"].active svg { fill:#fff; }
+
+/* ── Main Content ── */
+.main { max-width:1120px; margin:0 auto; padding:36px 40px 60px; }
+.pane { display:none; animation:fadeIn .25s ease; }
+.pane.active { display:block; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+.pane-header { margin-bottom:24px; }
+.pane-header h2 { font-size:22px; font-weight:700; color:var(--text); letter-spacing:-.3px; }
+.pane-header p { font-size:13px; color:var(--text-2); margin-top:4px; font-weight:400; }
+
+/* ── Resource Cards ── */
+.res-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.res-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px 24px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; transition:all .2s; }
+.res-card:hover { border-color:var(--purple); box-shadow:var(--shadow-md); transform:translateY(-2px); }
+.res-card .rc-info { flex:1; min-width:0; }
+.res-card .rc-title { font-size:14px; font-weight:600; color:var(--text); margin-bottom:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; letter-spacing:-.1px; }
+.res-card .rc-desc { font-size:12px; color:var(--text-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.res-card .rc-arrow { flex-shrink:0; margin-left:16px; width:28px; height:28px; border-radius:50%; background:var(--lavender-light); display:flex; align-items:center; justify-content:center; color:var(--text-3); font-size:14px; transition:all .2s; }
+.res-card:hover .rc-arrow { background:var(--lavender); color:var(--purple); }
+
+/* ── Agent Tab ── */
+.agent-hero { text-align:center; padding:56px 24px 32px; }
+.agent-hero .copilot-icon { width:56px; height:56px; margin:0 auto 20px; background:var(--gradient); border-radius:16px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 32px rgba(15,108,189,.2); }
+.agent-hero .copilot-icon svg { width:30px; height:30px; fill:#fff; }
+.agent-hero h2 { font-size:24px; font-weight:700; margin-bottom:6px; letter-spacing:-.3px; }
+.agent-hero p { font-size:15px; color:var(--text-2); margin-bottom:28px; }
+.agent-chat { max-width:600px; margin:0 auto; position:relative; }
+.agent-chat input { width:100%; height:52px; border:1.5px solid var(--border); border-radius:28px; padding:0 56px 0 24px; font-size:14px; outline:none; font-family:inherit; background:var(--surface); box-shadow:var(--shadow-sm); transition:all .2s; }
+.agent-chat input:focus { border-color:var(--purple); box-shadow:0 0 0 3px rgba(107,63,160,.12), var(--shadow-md); }
+.agent-prompts { display:flex; gap:8px; justify-content:center; margin-top:20px; flex-wrap:wrap; }
+.agent-prompts .prompt { padding:9px 18px; border:1px solid var(--border); border-radius:24px; font-size:12px; font-weight:500; color:var(--text-2); cursor:pointer; background:var(--surface); transition:all .2s; box-shadow:var(--shadow-sm); }
+.agent-prompts .prompt:hover { border-color:var(--purple); color:var(--purple); box-shadow:var(--shadow-md); transform:translateY(-1px); }
+
+@media(max-width:960px) { .res-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:640px) { .res-grid{grid-template-columns:1fr;} .cat-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:16px;} .hero h1{font-size:26px;} .hero{padding:48px 20px 40px;} .main{padding:24px 16px;} }
+</style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="topbar">
+  <div class="topbar-brand"><span class="brand-dot"></span>MCS Portal</div>
+  <div class="topbar-nav">
+    <a href="#" class="active">Home</a>
+  </div>
+  <div class="topbar-right">
+    <button class="icon-btn"><svg viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3l-1 2v1h14v-1l-1-2V8a6 6 0 00-6-6zm-2 14a2 2 0 004 0H8z"/></svg></button>
+    <button class="icon-btn"><svg viewBox="0 0 20 20"><path d="M11.5 3a1.5 1.5 0 00-3 0h-1A2.5 2.5 0 005 5.5V6H4v2h12V6h-1v-.5A2.5 2.5 0 0012.5 3h-1zM5 10v5a2 2 0 002 2h6a2 2 0 002-2v-5H5z"/></svg></button>
+    <div class="avatar">SS</div>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="blob-container">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+  </div>
+  <h1>Welcome to <strong>Mission Critical Services</strong> Unified Portal</h1>
+  <p>Your single destination for all Mission Critical Services resources</p>
+  <div class="search-box">
+    <input type="text" placeholder="What are you looking for?" />
+    <button class="send-btn"><svg viewBox="0 0 20 20"><path d="M2.7 3.2a.5.5 0 01.6-.1l14 7a.5.5 0 010 .9l-14 7a.5.5 0 01-.7-.5V11l8-1-8-1V3.7a.5.5 0 01.1-.5z"/></svg></button>
+  </div>
+</div>
+
+<!-- ═══ CATEGORY PILLS ═══ -->
+<div class="cat-bar">
+  <div class="cat-pill active" data-color="c1" onclick="showTab('playbooks')">
+    <svg viewBox="0 0 20 20"><path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h5V3H4zm7 0v14h5a1 1 0 001-1V4a1 1 0 00-1-1h-5z"/></svg>
+    Playbooks
+  </div>
+  <div class="cat-pill" data-color="c2" onclick="showTab('templates')">
+    <svg viewBox="0 0 20 20"><path d="M5 2a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-5-5H5zm6 0v4a1 1 0 001 1h4"/></svg>
+    Templates
+  </div>
+  <div class="cat-pill" data-color="c3" onclick="showTab('guides')">
+    <svg viewBox="0 0 20 20"><path d="M9 2a1 1 0 011 0l7 4v8l-7 4a1 1 0 01-1 0l-7-4V6l7-4zM10 4L5 7v6l5 3 5-3V7l-5-3z"/></svg>
+    Guides / How-To
+  </div>
+  <div class="cat-pill" data-color="c4" onclick="showTab('checklists')">
+    <svg viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm6 7l4-4-1-1-3 3-1.5-1.5-1 1L9 11z"/></svg>
+    Checklists
+  </div>
+  <div class="cat-pill" data-color="c5" onclick="showTab('reports')">
+    <svg viewBox="0 0 20 20"><path d="M3 14h2v3H3v-3zm4-4h2v7H7v-7zm4-3h2v10h-2V7zm4-4h2v14h-2V3z"/></svg>
+    Reports & Dashboards
+  </div>
+  <div class="cat-pill" data-color="c6" onclick="showTab('flows')">
+    <svg viewBox="0 0 20 20"><path d="M3 5a2 2 0 012-2h2a2 2 0 012 2v1h2V5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6H9v1a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm0 8a2 2 0 012-2h10a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2z"/></svg>
+    Process Flows
+  </div>
+  <div class="cat-pill" data-color="c7" onclick="showTab('training')">
+    <svg viewBox="0 0 20 20"><path d="M10 2l8 4-8 4-8-4 8-4zm-6 7l6 3 6-3v2l-6 3-6-3v-2z"/></svg>
+    Training
+  </div>
+  <div class="cat-pill" data-color="c8" onclick="showTab('reference')">
+    <svg viewBox="0 0 20 20"><path d="M3 3h5a2 2 0 012 2v12a1 1 0 01-1-1 1 1 0 00-1-1H3V3zm14 0h-5a2 2 0 00-2 2v12a1 1 0 011-1 1 1 0 011-1h5V3z"/></svg>
+    Reference / KB
+  </div>
+  <div class="cat-pill" data-color="c9" onclick="showTab('comms')">
+    <svg viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H8l-4 3v-3H4a2 2 0 01-2-2V5z"/></svg>
+    Communications
+  </div>
+  <div class="cat-pill" data-color="c10" onclick="showTab('agent')">
+    <svg viewBox="0 0 20 20"><path d="M10 1a5 5 0 00-5 5v2a1 1 0 00-1 1v3a1 1 0 001 1h1a4 4 0 008 0h1a1 1 0 001-1V9a1 1 0 00-1-1V6a5 5 0 00-5-5zm-1.5 8a1 1 0 110 2 1 1 0 010-2zm3 0a1 1 0 110 2 1 1 0 010-2zM6 16v1a2 2 0 002 2h4a2 2 0 002-2v-1H6z"/></svg>
+    Agent & Copilot
+  </div>
+</div>
+
+<!-- ═══ CONTENT PANES ═══ -->
+<div class="main">
+
+<!-- PLAYBOOKS -->
+<div class="pane active" id="playbooks">
+  <div class="pane-header"><h2>Playbooks</h2><p>Scenario-driven operational guidance</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Onboarding &#8211; Pre-Onboarding & Customer Setup</div><div class="rc-desc">Phase-based customer setup guidance before kickoff</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Onboarding &#8211; Business & Technical</div><div class="rc-desc">Kickoff through technical enablement</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Onboarding a MCSfMSC Customer</div><div class="rc-desc">End-to-end onboarding operational guide</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Care/PHE Purview Escalation Playbook</div><div class="rc-desc">Escalation paths for Purview incidents</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Issue Resolution Playbook (MCS)</div><div class="rc-desc">Issue handling & resolution flows</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Readiness Playbook</div><div class="rc-desc">Sentinel readiness resources & updates</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Direct Connect Process Playbook</div><div class="rc-desc">Customer re-education & escalation guidance</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Routing Enablement Guidance (Week 4 / Day 5)</div><div class="rc-desc">Playbook-referenced routing timing</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">DCR Playbooks (Entra, Intune, Purview, MTP)</div><div class="rc-desc">Design Change Request workflows per product</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Care/PHE Escalation (Intune, MDO, Security Copilot)</div><div class="rc-desc">Product-specific escalation paths</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">CSS to Care/PHE Escalation Path</div><div class="rc-desc">Cross-team escalation routing</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- TEMPLATES -->
+<div class="pane" id="templates">
+  <div class="pane-header"><h2>Templates</h2><p>Pre-formatted reusable artifacts</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCSfMSC Customer Onboarding Template (v2.0)</div><div class="rc-desc">Official kickoff & onboarding deck</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Customer Onboarding Follow-Up Email</div><div class="rc-desc">Post-kickoff reusable customer email</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Intake Template (v2.0)</div><div class="rc-desc">Standardized intake data capture</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Support Case Best Practices Deck</div><div class="rc-desc">Onboarding expectations for customers</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Customer Lockbox Process Slide</div><div class="rc-desc">Lockbox workflow for onboarding decks</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCSfSC Ops Review Deck (Weekly)</div><div class="rc-desc">Standardized ops review structure</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">CSAM Walking Deck for MCS</div><div class="rc-desc">Role-based CSAM engagement guide</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Customer Decks (Azure/M365/Security/BizApps)</div><div class="rc-desc">Customer-facing presentation templates</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- GUIDES -->
+<div class="pane" id="guides">
+  <div class="pane-header"><h2>Guides / How-To</h2><p>Focused, single-task instructions</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Email Escalation Workflow (Step-by-Step)</div><div class="rc-desc">How customers escalate to MCS</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Customer Pipeline Management Guide</div><div class="rc-desc">Nomination &#8594; Deal &#8594; Onboarding</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCSfMSC Intake Portal</div><div class="rc-desc">aka.ms/mcsfmscintake</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">SEV One Escalation Process</div><div class="rc-desc">Sev1/A escalation handling steps</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">IcM / DFM Stamping Guide</div><div class="rc-desc">How to stamp incidents in IcM</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">How to Submit CRM Deliverables</div><div class="rc-desc">CRM operational task instructions</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- CHECKLISTS -->
+<div class="pane" id="checklists">
+  <div class="pane-header"><h2>Checklists</h2><p>Action validation lists</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Delivery Team &#8211; Implemented Changes & Required Actions</div><div class="rc-desc">Monthly readiness action checklist by role</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Change Readiness Log</div><div class="rc-desc">Sprint-scoped release readiness checklist</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Customer Onboarding Processes (Loop)</div><div class="rc-desc">Working onboarding follow-up tracker</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Pre-Onboarding Customer Setup Checklist</div><div class="rc-desc">Setup validation before kickoff</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Role-Specific Readiness Steps</div><div class="rc-desc">CLE / CSS / PHE / CEM per-role actions</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- REPORTS -->
+<div class="pane" id="reports">
+  <div class="pane-header"><h2>Reports & Dashboards</h2><p>Data-driven status and decision-making tools</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCSfMSC Power BI</div><div class="rc-desc">Main MCS Power BI dashboard</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Dashboard &#8211; Power BI</div><div class="rc-desc">Operational dashboard</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Dash Case Insights</div><div class="rc-desc">Case-level analytics</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS BI Scorecards</div><div class="rc-desc">Performance scorecards</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Support Health Metrics Scorecard</div><div class="rc-desc">Health metrics tracking</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Data Dashboard</div><div class="rc-desc">Operational data views</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">SCIM CRI Deep Dive</div><div class="rc-desc">CRI analytics deep dive</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">SCIM WSR Drilldown</div><div class="rc-desc">WSR analytics</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">WSR Scorecard</div><div class="rc-desc">Weekly service review metrics</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">SCIM Case Heatmap</div><div class="rc-desc">Case distribution analysis</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Proactive Resiliency Dashboard</div><div class="rc-desc">Service health & resilience monitoring</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Weekly Ops Data (Excel)</div><div class="rc-desc">Weekly operational data input</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- FLOWS -->
+<div class="pane" id="flows">
+  <div class="pane-header"><h2>Process Flows</h2><p>Visual representations of workflows</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Email Escalation Workflow (Visual)</div><div class="rc-desc">End-to-end escalation flow diagram</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">CSS &#8594; Care/PHE Escalation Path</div><div class="rc-desc">Cross-team routing visualization</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Care/PHE Escalation Workflows (Per Product)</div><div class="rc-desc">Product-specific escalation diagrams</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Crisis Prevention & MIRP</div><div class="rc-desc">Major Incident Response Plan</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Sev 1/A Issue Resolution Process Flow</div><div class="rc-desc">Severity-based resolution workflow</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Customer Onboarding End-to-End Flow</div><div class="rc-desc">Nomination &#8594; Onboarding &#8594; Run-state</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- TRAINING -->
+<div class="pane" id="training">
+  <div class="pane-header"><h2>Training Materials</h2><p>Learning-oriented content</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCSfMSC Customer Onboarding v2.0 (Training)</div><div class="rc-desc">Kickoff deck used for CLE ramp</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Program Scrum Recordings</div><div class="rc-desc">Operational training via meeting recordings</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Job Task Analysis / CLE-PHE Ramp Plans</div><div class="rc-desc">Role-based competency development</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Onboarding Processes & Tooling Review</div><div class="rc-desc">Training session on onboarding gaps</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCAPS Onboarding Field Operations Playbook</div><div class="rc-desc">Broader onboarding framework</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Walking Decks (Azure/M365/Internal)</div><div class="rc-desc">Internal training presentation decks</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- REFERENCE -->
+<div class="pane" id="reference">
+  <div class="pane-header"><h2>Reference / Knowledge Base</h2><p>Authoritative static lookup materials</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">SLA Definitions (15-min Initial Response)</div><div class="rc-desc">Response time commitments per MBR docs</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Role Definitions (CLE/PHE/CSS/SCIM/Care)</div><div class="rc-desc">Responsibilities per playbooks & onboarding</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Evolution of ROB and SIP for MCSfMSC</div><div class="rc-desc">Health Review & SIP definitions</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCAPS Onboarding FAQ</div><div class="rc-desc">Common onboarding questions</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Unified Portal One Pager</div><div class="rc-desc">Vision doc for single source of truth</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Escalation Authorization & Sender Rules</div><div class="rc-desc">Who can escalate, required data format</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- COMMS -->
+<div class="pane" id="comms">
+  <div class="pane-header"><h2>Communications</h2><p>Operational meetings & broadcasts</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCSfSC Delivery Update MBRs (Monthly)</div><div class="rc-desc">Monthly business reviews</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Implemented/Upcoming Changes Emails</div><div class="rc-desc">Monthly readiness change notifications</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Change Readiness + Sprint Planning</div><div class="rc-desc">Sprint-scoped readiness comms</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">OES Newsletter (Monthly)</div><div class="rc-desc">Operational readiness dashboards & updates</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Operations Meeting Notes (Loop)</div><div class="rc-desc">Weekly ops meeting notes & action items</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">CARE OE PM Weekly Meeting Notes</div><div class="rc-desc">PM-level weekly sync notes</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Program Scrum Meeting Notes</div><div class="rc-desc">Sprint-scoped program communications</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+<!-- AGENT & COPILOT -->
+<div class="pane" id="agent">
+  <div class="agent-hero">
+    <div class="copilot-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+    </div>
+    <h2>MCS Copilot</h2>
+    <p>Ask questions about MCS resources, processes, and best practices</p>
+    <div class="agent-chat">
+      <input type="text" placeholder="Ask MCS Copilot anything..." />
+    </div>
+    <div class="agent-prompts">
+      <div class="prompt">How do I onboard a new MCS customer?</div>
+      <div class="prompt">What is the Sev1 escalation process?</div>
+      <div class="prompt">Show me the latest MBR deck</div>
+      <div class="prompt">What are the SLA definitions?</div>
+      <div class="prompt">Find the DCR playbook for Entra</div>
+    </div>
+  </div>
+  <div class="pane-header" style="margin-top:32px;"><h2>Agent Tools</h2><p>AI-powered assistants for MCS workflows</p></div>
+  <div class="res-grid">
+    <div class="res-card"><div class="rc-info"><div class="rc-title">MCS Copilot Chat</div><div class="rc-desc">Natural language Q&A across all MCS resources</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Case Triage Agent</div><div class="rc-desc">AI-assisted case routing and prioritization</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Onboarding Wizard</div><div class="rc-desc">Step-by-step guided customer onboarding</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Escalation Assistant</div><div class="rc-desc">Smart escalation path recommendation</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Report Builder</div><div class="rc-desc">Generate custom reports from MCS data</div></div><span class="rc-arrow">→</span></div>
+    <div class="res-card"><div class="rc-info"><div class="rc-title">Readiness Checker</div><div class="rc-desc">Validate sprint readiness automatically</div></div><span class="rc-arrow">→</span></div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.pane').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.cat-pill').forEach(function(t){ t.classList.remove('active'); });
+  var pane = document.getElementById(id);
+  if(pane) pane.classList.add('active');
+  var pills = document.querySelectorAll('.cat-pill');
+  var names = ['playbooks','templates','guides','checklists','reports','flows','training','reference','comms','agent'];
+  for(var i=0;i<pills.length;i++){ if(names[i]===id) pills[i].classList.add('active'); }
+}
+</script>
+</body>
+</html>
