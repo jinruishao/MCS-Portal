@@ -49,7 +49,7 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
 .avatar { width:32px; height:32px; border-radius:50%; background:var(--gradient); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:600; cursor:pointer; }
 
 /* ── Hero ── */
-.hero { background:#FAFAFE; padding:80px 40px 64px; text-align:center; position:relative; overflow:hidden; }
+.hero { background:#FAFAFE; padding:80px 40px 42px; text-align:center; position:relative; overflow:visible; z-index:3; }
 .hero::before,.hero::after { content:none; }
 
 /* ── Decorative Blobs ── */
@@ -80,30 +80,30 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
 .hero p { font-size:16px; color:var(--text-2); margin-bottom:36px; font-weight:400; line-height:1.5; position:relative; z-index:1; }
 .hero p a { color:var(--purple); text-decoration:none; font-weight:600; }
 .hero p a:hover { text-decoration:underline; }
-.search-box { max-width:620px; margin:0 auto; position:relative; z-index:1; }
-.search-box input { width:100%; height:54px; border:1.5px solid rgba(139,111,192,.15); border-radius:28px; padding:0 56px 0 24px; font-size:15px; color:var(--text); outline:none; transition:all .2s; background:#fff; box-shadow:0 4px 20px rgba(107,95,141,.06); font-family:inherit; }
+.search-box { width:min(560px, calc(100vw - 48px)); margin:0 auto; position:relative; z-index:30; }
+.search-box input { width:100%; height:52px; border:1.5px solid rgba(139,111,192,.15); border-radius:26px; padding:0 54px 0 22px; font-size:15px; color:var(--text); outline:none; transition:all .2s; background:#fff; box-shadow:0 4px 20px rgba(107,95,141,.06); font-family:inherit; }
 .search-box input::placeholder { color:var(--text-3); }
 .search-box input:focus { border-color:var(--purple); box-shadow:0 4px 28px rgba(139,111,192,.12); }
 .search-box .send-btn { position:absolute; right:8px; top:50%; transform:translateY(-50%); width:38px; height:38px; border:none; background:linear-gradient(135deg, #8B6FC0, #7B8ED8); border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform .15s, box-shadow .15s; }
 .search-box .send-btn:hover { transform:translateY(-50%) scale(1.08); box-shadow:0 4px 16px rgba(139,111,192,.25); }
 .search-box .send-btn svg { width:16px; height:16px; fill:#fff; }
-.search-results { position:absolute; top:calc(100% + 12px); left:0; right:0; background:rgba(255,255,255,.98); border:1px solid rgba(139,111,192,.16); border-radius:20px; box-shadow:0 20px 50px rgba(74,58,107,.14); overflow:hidden; display:none; text-align:left; backdrop-filter:blur(14px); }
+.search-results { position:absolute; top:calc(100% + 10px); left:0; right:0; background:rgba(255,255,255,.98); border:1px solid rgba(139,111,192,.16); border-radius:18px; box-shadow:0 18px 42px rgba(74,58,107,.12); overflow:hidden; display:none; text-align:left; backdrop-filter:blur(14px); z-index:40; }
 .search-results.visible { display:block; }
-.search-results-header { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 18px; border-bottom:1px solid var(--border); background:linear-gradient(180deg, rgba(246,242,251,.9), rgba(255,255,255,.92)); }
+.search-results-header { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; border-bottom:1px solid var(--border); background:linear-gradient(180deg, rgba(246,242,251,.9), rgba(255,255,255,.92)); }
 .search-results-title { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.45px; color:var(--purple); }
 .search-results-hint { font-size:11px; color:var(--text-3); }
-.search-results-list { max-height:360px; overflow:auto; }
-.search-result { padding:14px 18px; border-bottom:1px solid rgba(238,235,244,.85); cursor:pointer; transition:background .15s, transform .15s; }
+.search-results-list { max-height:300px; overflow:auto; }
+.search-result { padding:12px 16px; border-bottom:1px solid rgba(238,235,244,.85); cursor:pointer; transition:background .15s, transform .15s; }
 .search-result:last-child { border-bottom:none; }
 .search-result:hover,.search-result.active { background:rgba(246,242,251,.95); }
 .search-result-main { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
 .search-result-copy { min-width:0; }
-.search-result-title { font-size:14px; font-weight:700; color:var(--text); margin-bottom:4px; }
-.search-result-desc { font-size:12px; line-height:1.55; color:var(--text-2); }
+.search-result-title { font-size:13px; font-weight:700; color:var(--text); margin-bottom:4px; }
+.search-result-desc { font-size:11px; line-height:1.5; color:var(--text-2); }
 .search-result-meta { display:flex; align-items:center; gap:8px; flex-shrink:0; }
 .search-result-kind { display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; background:var(--lavender-light); color:var(--purple); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.45px; }
 .search-result-pane { font-size:11px; color:var(--text-3); white-space:nowrap; }
-.search-empty { padding:20px 18px; font-size:13px; color:var(--text-2); }
+.search-empty { padding:18px 16px; font-size:12px; color:var(--text-2); }
 .search-hit { animation:searchPulse 1.8s ease; border-color:var(--purple) !important; box-shadow:0 0 0 3px rgba(139,111,192,.16), var(--shadow-md) !important; }
 @keyframes searchPulse {
   0% { box-shadow:0 0 0 0 rgba(139,111,192,.26); }
@@ -112,7 +112,7 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
 }
 
 /* ── Category Pills ── */
-.cat-bar { padding:28px 40px 0; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+.cat-bar { padding:12px 40px 0; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; position:relative; z-index:1; }
 .cat-pill { display:flex; align-items:center; gap:7px; padding:10px 22px; border-radius:28px; border:1.5px solid var(--border); background:var(--surface); font-size:13px; font-weight:500; color:var(--text-2); cursor:pointer; transition:all .2s; white-space:nowrap; box-shadow:var(--shadow-sm); }
 .cat-pill svg { width:15px; height:15px; fill:var(--text-3); flex-shrink:0; transition:fill .2s; }
 .cat-pill:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
