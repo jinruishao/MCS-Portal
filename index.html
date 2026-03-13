@@ -49,7 +49,7 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
 .avatar { width:32px; height:32px; border-radius:50%; background:var(--gradient); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:600; cursor:pointer; }
 
 /* ── Hero ── */
-.hero { background:#FAFAFE; padding:80px 40px 42px; text-align:center; position:relative; overflow:visible; z-index:3; }
+.hero { background:#FAFAFE; padding:80px 40px 64px; text-align:center; position:relative; overflow:visible; z-index:3; }
 .hero::before,.hero::after { content:none; }
 
 /* ── Decorative Blobs ── */
@@ -112,7 +112,7 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
 }
 
 /* ── Category Pills ── */
-.cat-bar { padding:12px 40px 0; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; position:relative; z-index:1; }
+.cat-bar { padding:28px 40px 0; display:flex; justify-content:center; flex-wrap:wrap; gap:10px; position:relative; z-index:1; }
 .cat-pill { display:flex; align-items:center; gap:7px; padding:10px 22px; border-radius:28px; border:1.5px solid var(--border); background:var(--surface); font-size:13px; font-weight:500; color:var(--text-2); cursor:pointer; transition:all .2s; white-space:nowrap; box-shadow:var(--shadow-sm); }
 .cat-pill svg { width:15px; height:15px; fill:var(--text-3); flex-shrink:0; transition:fill .2s; }
 .cat-pill:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
@@ -170,133 +170,33 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
 .metric-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px 22px; }
 .metric-card .metric-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--text-3); margin-bottom:10px; }
 .metric-card .metric-value { font-size:28px; font-weight:700; color:var(--text); letter-spacing:-.8px; }
-.metric-card .metric-subtext { font-size:12px; color:var(--text-2); margin-top:8px; line-height:1.5; }
-.metric-card .metric-value.alert { color:#C75A65; }
-.metric-card .metric-value.good { color:#3D8C63; }
-.insight-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-bottom:24px; }
-.insight-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px 24px; }
-.insight-card h3 { font-size:15px; font-weight:700; color:var(--text); margin-bottom:12px; }
-.insight-list { display:flex; flex-direction:column; gap:10px; }
-.insight-item { padding:12px 14px; border-radius:12px; background:var(--bg); border:1px solid var(--border); }
-.insight-item strong { display:block; font-size:13px; color:var(--text); margin-bottom:4px; }
-.insight-item span { display:block; font-size:12px; color:var(--text-2); line-height:1.5; white-space:pre-wrap; }
-.portal-note { background:linear-gradient(135deg, rgba(139,111,192,.12), rgba(123,142,216,.12)); border:1px solid rgba(139,111,192,.18); border-radius:var(--radius); padding:22px 24px; margin-bottom:24px; }
-.portal-note h3 { font-size:15px; font-weight:700; color:var(--text); margin-bottom:8px; }
-.portal-note p { font-size:13px; line-height:1.7; color:var(--text-2); }
-.executive-block { margin-bottom:28px; }
-.executive-block .pane-header { margin-bottom:16px; }
-.executive-block .pane-header h2 { font-size:19px; }
-.executive-block .pane-header p { font-size:12px; }
-.context-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:16px; }
-.risk-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:24px; }
-.risk-card { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:20px; box-shadow:var(--shadow-sm); }
-.risk-card h4 { font-size:15px; line-height:1.35; color:var(--text); margin-bottom:10px; letter-spacing:-.2px; }
-.risk-meta { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
-.risk-pill { padding:5px 10px; border-radius:999px; background:var(--lavender-light); color:var(--purple); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.35px; }
-.risk-card p { font-size:12px; line-height:1.6; color:var(--text-2); margin-bottom:12px; }
-.risk-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.risk-action { background:var(--bg); border-radius:12px; padding:10px 12px; }
-.risk-action strong { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.35px; color:var(--text-3); margin-bottom:4px; }
-.risk-action span { display:block; font-size:12px; color:var(--text); line-height:1.5; }
-.dashboard-shell { display:grid; grid-template-columns:1.2fr .8fr; gap:16px; margin-bottom:24px; }
-.hero-dashboard { background:linear-gradient(135deg, #fff 0%, #fbf7ff 55%, #fff7f3 100%); border:1px solid rgba(139,111,192,.18); border-radius:24px; padding:28px; position:relative; overflow:hidden; box-shadow:var(--shadow-md); }
-.hero-dashboard::before { content:''; position:absolute; inset:auto -40px -60px auto; width:220px; height:220px; background:radial-gradient(circle, rgba(240,145,155,.26) 0%, rgba(240,145,155,0) 70%); }
-.hero-kicker { display:flex; align-items:center; gap:10px; margin-bottom:14px; position:relative; z-index:1; }
-.hero-icon { width:42px; height:42px; border-radius:14px; background:linear-gradient(135deg, #8B6FC0, #F0919B); display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; box-shadow:0 10px 22px rgba(139,111,192,.24); }
-.hero-kicker span { font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:var(--purple); }
-.hero-dashboard h3 { font-size:28px; line-height:1.15; letter-spacing:-.8px; color:var(--text); margin-bottom:10px; position:relative; z-index:1; }
-.hero-dashboard p { max-width:720px; font-size:14px; line-height:1.75; color:var(--text-2); position:relative; z-index:1; }
-.hero-band { margin-top:20px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; position:relative; z-index:1; }
-.hero-band-card { background:rgba(255,255,255,.76); border:1px solid rgba(139,111,192,.1); border-radius:16px; padding:14px 16px; backdrop-filter:blur(8px); }
-.hero-band-label { font-size:11px; font-weight:700; text-transform:uppercase; color:var(--text-3); letter-spacing:.45px; margin-bottom:6px; }
-.hero-band-value { font-size:15px; font-weight:700; color:var(--text); }
-.cockpit-card { background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:24px; box-shadow:var(--shadow-md); }
-.cockpit-card h3 { font-size:16px; font-weight:700; color:var(--text); margin-bottom:14px; }
-.gauge-wrap { display:flex; align-items:center; gap:18px; }
-.risk-gauge { --gauge:72; width:148px; height:148px; border-radius:50%; background:conic-gradient(#C75A65 0 calc(var(--gauge) * 1%), #F4C5A0 calc(var(--gauge) * 1%) calc((var(--gauge) + 12) * 1%), #ECE7F5 0); position:relative; flex-shrink:0; }
-.risk-gauge::after { content:''; position:absolute; inset:16px; background:#fff; border-radius:50%; box-shadow:inset 0 0 0 1px rgba(139,111,192,.08); }
-.risk-gauge-core { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:1; }
-.risk-gauge-core strong { font-size:34px; color:var(--text); letter-spacing:-1px; }
-.risk-gauge-core span { font-size:11px; text-transform:uppercase; letter-spacing:.45px; color:var(--text-3); font-weight:700; }
-.gauge-legend { display:flex; flex-direction:column; gap:10px; }
-.legend-row { display:flex; align-items:center; gap:10px; font-size:12px; color:var(--text-2); }
-.legend-dot { width:10px; height:10px; border-radius:999px; flex-shrink:0; }
-.legend-dot.critical { background:#C75A65; }
-.legend-dot.watch { background:#F4C5A0; }
-.legend-dot.stable { background:#8B6FC0; }
-.chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; }
-.chart-card { background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:24px; box-shadow:var(--shadow-sm); }
-.chart-card h3 { font-size:16px; font-weight:700; color:var(--text); margin-bottom:16px; }
-.chart-subtitle { font-size:12px; color:var(--text-2); margin-top:-6px; margin-bottom:16px; }
-.stack-bar { display:flex; height:18px; border-radius:999px; overflow:hidden; background:#F1EDF7; margin-bottom:14px; }
-.stack-seg-open { background:linear-gradient(90deg, #F0919B, #E85C82); }
-.stack-seg-sev { background:linear-gradient(90deg, #8B6FC0, #6B5F8D); }
-.stack-seg-icm { background:linear-gradient(90deg, #7B8ED8, #5BBAC6); }
-.stack-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-.stack-metric { background:var(--bg); border-radius:14px; padding:12px; }
-.stack-metric strong { display:block; font-size:18px; color:var(--text); margin-bottom:2px; }
-.stack-metric span { display:block; font-size:11px; color:var(--text-2); text-transform:uppercase; letter-spacing:.4px; }
-.bar-list { display:flex; flex-direction:column; gap:14px; }
-.bar-row { display:grid; grid-template-columns:140px 1fr 48px; gap:10px; align-items:center; }
-.bar-row label { font-size:12px; color:var(--text); font-weight:600; }
-.bar-track { height:12px; border-radius:999px; background:#F1EDF7; overflow:hidden; }
-.bar-fill { height:100%; border-radius:999px; background:linear-gradient(90deg, #8B6FC0, #F0919B); }
-.bar-row span { font-size:12px; color:var(--text-2); text-align:right; }
-.timeline { display:flex; flex-direction:column; gap:14px; }
-.timeline-item { position:relative; padding-left:22px; }
-.timeline-item::before { content:''; position:absolute; left:0; top:5px; width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, #8B6FC0, #F0919B); box-shadow:0 0 0 4px rgba(139,111,192,.12); }
-.timeline-item::after { content:''; position:absolute; left:4px; top:18px; bottom:-16px; width:2px; background:#EEE7F6; }
-.timeline-item:last-child::after { display:none; }
-.timeline-item strong { display:block; font-size:13px; color:var(--text); margin-bottom:4px; }
-.timeline-item span { display:block; font-size:12px; color:var(--text-2); line-height:1.55; }
-.section-title { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
-.section-title h3 { font-size:18px; color:var(--text); letter-spacing:-.3px; }
-.section-pill { font-size:11px; text-transform:uppercase; letter-spacing:.5px; font-weight:700; color:var(--purple); background:var(--lavender-light); padding:7px 12px; border-radius:999px; }
+.arch-option-tag { padding:6px 10px; border-radius:999px; background:var(--lavender-light); color:var(--purple); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.45px; }
+.arch-option h4 { position:relative; z-index:1; font-size:20px; letter-spacing:-.5px; color:var(--text); margin-bottom:8px; }
+.arch-option p { position:relative; z-index:1; font-size:12px; line-height:1.6; color:var(--text-2); margin-bottom:16px; }
+.arch-mini { position:relative; z-index:1; min-height:208px; border-radius:20px; padding:16px; background:rgba(255,255,255,.82); border:1px solid rgba(139,111,192,.1); }
+.arch-mini.executive { background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,242,251,.95)); }
+.arch-mini.product { background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(243,248,255,.92)); }
+.arch-mini.formal { background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,246,241,.94)); }
+.mini-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.45px; color:var(--text-3); margin-bottom:10px; }
+.mini-flow { display:grid; gap:10px; }
+.mini-node { padding:12px 14px; border-radius:16px; background:#fff; border:1px solid rgba(139,111,192,.12); box-shadow:0 8px 20px rgba(74,58,107,.05); }
+.mini-node strong { display:block; font-size:13px; color:var(--text); }
+.mini-node span { display:block; margin-top:4px; font-size:11px; line-height:1.5; color:var(--text-2); }
+.mini-node.core { background:linear-gradient(135deg, rgba(139,111,192,.16), rgba(196,118,184,.12)); border-color:rgba(139,111,192,.18); }
+.mini-arrow { width:2px; height:24px; background:linear-gradient(180deg, rgba(139,111,192,.2), rgba(139,111,192,.9)); border-radius:999px; margin:0 auto; position:relative; }
+.mini-arrow::after { content:''; position:absolute; left:50%; bottom:-2px; transform:translateX(-50%); border-left:6px solid transparent; border-right:6px solid transparent; border-top:8px solid var(--purple); }
+.mini-surface { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin-top:12px; }
+.mini-surface-block { padding:10px 8px; border-radius:14px; background:#fff; border:1px solid rgba(139,111,192,.12); text-align:center; }
+.mini-surface-block strong { display:block; font-size:12px; color:var(--text); }
+.mini-surface-block span { display:block; margin-top:3px; font-size:9px; text-transform:uppercase; letter-spacing:.35px; color:var(--text-3); }
+.mini-runtime { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin-top:12px; }
+.mini-runtime .mini-node { padding:10px; min-height:84px; }
+.mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.mini-grid .mini-node:last-child { grid-column:1 / -1; }
+.arch-option-note { position:relative; z-index:1; margin-top:14px; padding-top:14px; border-top:1px solid rgba(139,111,192,.1); font-size:11px; color:var(--text-2); line-height:1.6; }
 
-/* ── Feedback form ── */
-.feedback-form { max-width:640px; margin:0 auto; }
-.feedback-form .form-group { margin-bottom:20px; }
-.feedback-form label { display:block; font-size:13px; font-weight:600; color:var(--text); margin-bottom:6px; }
-.feedback-form input, .feedback-form textarea, .feedback-form select { width:100%; padding:12px 16px; border:1.5px solid var(--border); border-radius:var(--radius-sm); font-size:14px; font-family:inherit; outline:none; transition:border-color .2s; background:var(--surface); }
-.feedback-form input:focus, .feedback-form textarea:focus, .feedback-form select:focus { border-color:var(--purple); }
-.feedback-form textarea { min-height:120px; resize:vertical; }
-.feedback-form .submit-btn { padding:12px 32px; background:var(--gradient); color:#fff; border:none; border-radius:28px; font-size:14px; font-weight:600; cursor:pointer; transition:transform .15s, box-shadow .15s; font-family:inherit; }
-.feedback-form .submit-btn:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(139,111,192,.3); }
-
-/* ── Main Content ── */
-.main { max-width:1120px; margin:0 auto; padding:36px 40px 60px; }
-.pane { display:none; animation:fadeIn .25s ease; }
-.pane.active { display:block; }
-@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
-.pane-header { margin-bottom:24px; }
-.pane-header h2 { font-size:22px; font-weight:700; color:var(--text); letter-spacing:-.3px; }
-.pane-header p { font-size:13px; color:var(--text-2); margin-top:4px; font-weight:400; }
-
-/* ── Resource Cards ── */
-.res-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-.res-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px 24px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; transition:all .2s; text-decoration:none; color:inherit; }
-.res-card:hover { border-color:var(--purple); box-shadow:var(--shadow-md); transform:translateY(-2px); }
-.res-card .rc-info { flex:1; min-width:0; }
-.res-card .rc-title { font-size:14px; font-weight:600; color:var(--text); margin-bottom:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; letter-spacing:-.1px; }
-.res-card .rc-desc { font-size:12px; color:var(--text-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.res-card .rc-arrow { flex-shrink:0; margin-left:16px; width:28px; height:28px; border-radius:50%; background:var(--lavender-light); display:flex; align-items:center; justify-content:center; color:var(--text-3); font-size:14px; transition:all .2s; }
-.res-card:hover .rc-arrow { background:var(--lavender); color:var(--purple); }
-
-/* ── Agent Tab ── */
-.agent-hero { text-align:center; padding:56px 24px 32px; }
-.agent-hero .copilot-icon { width:56px; height:56px; margin:0 auto 20px; background:var(--gradient); border-radius:16px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 32px rgba(15,108,189,.2); }
-.agent-hero .copilot-icon svg { width:30px; height:30px; fill:#fff; }
-.agent-hero h2 { font-size:24px; font-weight:700; margin-bottom:6px; letter-spacing:-.3px; }
-.agent-hero p { font-size:15px; color:var(--text-2); margin-bottom:28px; }
-.agent-chat { max-width:600px; margin:0 auto; position:relative; }
-.agent-chat input { width:100%; height:52px; border:1.5px solid var(--border); border-radius:28px; padding:0 56px 0 24px; font-size:14px; outline:none; font-family:inherit; background:var(--surface); box-shadow:var(--shadow-sm); transition:all .2s; }
-.agent-chat input:focus { border-color:var(--purple); box-shadow:0 0 0 3px rgba(107,63,160,.12), var(--shadow-md); }
-.agent-prompts { display:flex; gap:8px; justify-content:center; margin-top:20px; flex-wrap:wrap; }
-.agent-prompts .prompt { padding:9px 18px; border:1px solid var(--border); border-radius:24px; font-size:12px; font-weight:500; color:var(--text-2); cursor:pointer; background:var(--surface); transition:all .2s; box-shadow:var(--shadow-sm); }
-.agent-prompts .prompt:hover { border-color:var(--purple); color:var(--purple); box-shadow:var(--shadow-md); transform:translateY(-1px); }
-
-@media(max-width:960px) { .res-grid,.metric-grid,.insight-grid,.knowme-story,.dashboard-shell,.chart-grid,.risk-grid,.context-grid{grid-template-columns:repeat(2,1fr);} .knowme-story,.dashboard-shell,.chart-grid{grid-template-columns:1fr;} .hero-band{grid-template-columns:1fr;} }
-@media(max-width:640px) { .res-grid,.metric-grid,.insight-grid,.info-grid,.knowme-panels,.hero-band,.risk-grid,.context-grid{grid-template-columns:1fr;} .gauge-wrap{flex-direction:column; align-items:flex-start;} .bar-row{grid-template-columns:1fr;}.cat-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:16px;} .hero h1{font-size:26px;} .hero{padding:48px 20px 40px;} .main{padding:24px 16px;} .search-results{left:-4px; right:-4px;} .search-result-main{flex-direction:column;} .search-result-meta{justify-content:space-between; width:100%;} }
+@media(max-width:960px) { .res-grid,.metric-grid,.insight-grid,.knowme-story,.dashboard-shell,.chart-grid,.risk-grid,.context-grid,.arch-summary,.arch-options{grid-template-columns:repeat(2,1fr);} .knowme-story,.dashboard-shell,.chart-grid,.arch-stage,.arch-platform-top,.arch-sync{grid-template-columns:1fr;} .hero-band{grid-template-columns:1fr;} .arch-arrow{width:2px; height:42px; justify-self:center; background:linear-gradient(180deg, rgba(139,111,192,.16), rgba(139,111,192,.9));} .arch-arrow::after{right:auto; left:50%; top:auto; bottom:-1px; transform:translateX(-50%); border-left:7px solid transparent; border-right:7px solid transparent; border-top:11px solid var(--purple); border-bottom:none;} .arch-runtime-grid,.mini-runtime{grid-template-columns:1fr;} .mini-surface{grid-template-columns:repeat(2, 1fr);} }
+@media(max-width:640px) { .res-grid,.metric-grid,.insight-grid,.info-grid,.knowme-panels,.hero-band,.risk-grid,.context-grid,.arch-summary,.arch-options{grid-template-columns:1fr;} .gauge-wrap{flex-direction:column; align-items:flex-start;} .bar-row{grid-template-columns:1fr;}.cat-bar{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:16px;} .hero h1{font-size:26px;} .hero{padding:48px 20px 40px;} .main{padding:24px 16px;} .search-results{left:-4px; right:-4px;} .search-result-main{flex-direction:column;} .search-result-meta{justify-content:space-between; width:100%;} .arch-shell{padding:22px 18px;} .arch-head{display:block;} .arch-head h3{font-size:24px;} .mini-surface,.mini-grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -309,27 +209,6 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
   </div>
   <div class="topbar-right">
     <button class="icon-btn"><svg viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3l-1 2v1h14v-1l-1-2V8a6 6 0 00-6-6zm-2 14a2 2 0 004 0H8z"/></svg></button>
-    <button class="icon-btn"><svg viewBox="0 0 20 20"><path d="M11.5 3a1.5 1.5 0 00-3 0h-1A2.5 2.5 0 005 5.5V6H4v2h12V6h-1v-.5A2.5 2.5 0 0012.5 3h-1zM5 10v5a2 2 0 002 2h6a2 2 0 002-2v-5H5z"/></svg></button>
-    <div class="avatar">SS</div>
-  </div>
-</div>
-
-<!-- ═══ HERO ═══ -->
-<div class="hero">
-  <div class="blob-container">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="blob blob-4"></div>
-    <div class="blob blob-5"></div>
-  </div>
-  <h1>Welcome to <strong>Mission Critical Services</strong> Unified Portal</h1>
-  <p>Your single destination for all Mission Critical Services resources</p>
-  <div class="search-box">
-    <input type="text" id="portal-search-input" placeholder="Search playbooks, reports, CRM links, customers..." autocomplete="off" />
-    <button class="send-btn" id="portal-search-button" type="button" aria-label="Search portal"><svg viewBox="0 0 20 20"><path d="M2.7 3.2a.5.5 0 01.6-.1l14 7a.5.5 0 010 .9l-14 7a.5.5 0 01-.7-.5V11l8-1-8-1V3.7a.5.5 0 01.1-.5z"/></svg></button>
-    <div class="search-results" id="portal-search-results">
-      <div class="search-results-header">
         <div class="search-results-title">Search Results</div>
         <div class="search-results-hint">Enter to jump, Esc to close</div>
       </div>
@@ -343,10 +222,6 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
   <div class="cat-pill active" data-color="c2" onclick="showTab('playbooks')">
     <svg viewBox="0 0 20 20"><path d="M4 3a1 1 0 00-1 1v12a1 1 0 001 1h5V3H4zm7 0v14h5a1 1 0 001-1V4a1 1 0 00-1-1h-5z"/></svg>
     Playbooks
-  </div>
-  <div class="cat-pill" data-color="c3" onclick="showTab('knowme')">
-    <svg viewBox="0 0 20 20"><path d="M10 2a5 5 0 00-5 5c0 2.1 1.3 3.9 3.1 4.7A7 7 0 003 18h2a5 5 0 0110 0h2a7 7 0 00-5.1-6.3A5 5 0 0015 7a5 5 0 00-5-5zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg>
-    Know Me
   </div>
   <div class="cat-pill" data-color="c4" onclick="showTab('reports')">
     <svg viewBox="0 0 20 20"><path d="M3 14h2v3H3v-3zm4-4h2v7H7v-7zm4-3h2v10h-2V7zm4-4h2v14h-2V3z"/></svg>
@@ -379,286 +254,13 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
     <div class="sub-pill active" onclick="filterPlaybooks('all',this)">All</div>
     <div class="sub-pill" onclick="filterPlaybooks('customer-onboarding',this)">Customer Onboarding</div>
     <div class="sub-pill" onclick="filterPlaybooks('issue-resolution',this)">Issue Resolution</div>
-    <div class="sub-pill" onclick="filterPlaybooks('strategic-guidance',this)">Strategic Guidance</div>
+    <div class="sub-pill" onclick="filterPlaybooks('strategic-guidance',this)">Reliability &amp; Technical Engagement</div>
     <div class="sub-pill" onclick="filterPlaybooks('technical-assessment',this)">Technical Assessment</div>
   </div>
   <div class="res-grid" id="playbooks-grid">
-    <a class="res-card" data-feature="customer-onboarding" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/SED%20Customer%20Onboarding.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Onboarding a MCSfMSC Customer</div><div class="rc-desc">End-to-end onboarding operational guide</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" data-feature="customer-onboarding" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Onboarding-an-MCSfMSC-Customer-V2.1.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">MCSfMSC Customer Onboarding Template (v2.0)</div><div class="rc-desc">Official kickoff & onboarding deck</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" data-feature="customer-onboarding" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/_layouts/15/Doc.aspx?sourcedoc=%7B9A378551-EDCB-4D8B-A7A6-C9D57681715B%7D&file=MCS%20Intake%20-%20Template.docx&action=default&mobileredirect=true&DefaultItemOpen=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">MCS Intake Template (v2.0)</div><div class="rc-desc">Standardized intake data capture for new customer onboarding</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" data-feature="issue-resolution" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Playbooks.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Care/PHE Purview Escalation Playbook</div><div class="rc-desc">Escalation paths for Purview incidents</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" data-feature="issue-resolution" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Playbooks.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Care/PHE Escalation (Intune, MDO, Security Copilot)</div><div class="rc-desc">Product-specific escalation paths</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" data-feature="issue-resolution" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Playbooks.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Issue Resolution Playbook (MCS)</div><div class="rc-desc">Issue handling & resolution flows</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" data-feature="strategic-guidance" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Playbooks.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Direct Connect Process Playbook</div><div class="rc-desc">Customer re-education and escalation guidance</div></div><span class="rc-arrow">→</span></a>
+    <a class="res-card" data-feature="customer-onboarding" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Playbooks.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Onboarding a MCSfMSC Customer</div><div class="rc-desc">End-to-end onboarding operational guide</div></div><span class="rc-arrow">→</span></a>
+    <a class="res-card" data-feature="issue-resolution" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Playbooks.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Issue Resolution Playbooks</div><div class="rc-desc">Issue handling & resolution flows</div></div><span class="rc-arrow">→</span></a>
     <a class="res-card" data-feature="strategic-guidance" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Playbooks.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">MCS Readiness Playbook</div><div class="rc-desc">Sentinel readiness resources and updates</div></div><span class="rc-arrow">→</span></a>
-  </div>
-</div>
-
-<!-- KNOW ME -->
-<div class="pane" id="knowme">
-  <div class="pane-header"><h2>Know Me</h2><p>Service-insights view for Mission Critical Services: current posture, risk drivers, ownership, and what needs to happen next</p></div>
-  <div class="knowme-toolbar">
-    <div class="knowme-picker">
-      <label for="customer-select" style="display:block; font-size:13px; font-weight:600; color:var(--text); margin-bottom:6px;">Customer</label>
-      <select id="customer-select">
-        <option>Loading Mission Critical Services customers...</option>
-      </select>
-    </div>
-  </div>
-  <div class="executive-block">
-    <div class="pane-header"><h2>1. Customer Context That Changes Delivery</h2><p>Only the context that materially changes service motion</p></div>
-    <div class="context-grid">
-      <div class="info-card">
-        <div class="info-label">Primary Tenant</div>
-        <div class="info-value" id="km-tenant">Loading...</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">When MCS Service Signed</div>
-        <div class="info-value" id="km-service-signed">Loading...</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">Other Program</div>
-        <div class="info-value" id="km-programs">Loading...</div>
-      </div>
-    </div>
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="info-label">In-Scope Workloads</div>
-        <div class="info-value" id="km-tech">Loading...</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label">Key Microsoft Contacts</div>
-        <div class="info-value" id="km-team">Loading...</div>
-      </div>
-    </div>
-    <div class="chart-grid">
-      <div class="info-card">
-        <div class="info-label">Possible Customer Onboarding Status</div>
-        <div class="info-value" id="km-onboarding-title">Loading...</div>
-        <div class="info-value small" id="km-onboarding-detail">Loading...</div>
-      </div>
-      <div class="insight-card">
-        <div class="info-label">Shalini ADO Onboarding Signals</div>
-        <h3>Program-level pre-onboarding work still open</h3>
-        <div class="insight-list" id="km-onboarding-ado-list"></div>
-      </div>
-    </div>
-  </div>
-  <div class="executive-block">
-    <div class="pane-header"><h2>2. Current Service Posture</h2><p>What is happening now</p></div>
-  <div class="dashboard-shell">
-    <div class="hero-dashboard">
-      <div class="hero-kicker">
-        <div class="hero-icon">◎</div>
-        <span>Current service posture</span>
-      </div>
-      <h3 id="km-customer-name">Loading...</h3>
-      <p id="km-customer-story">Loading...</p>
-      <div class="hero-band">
-        <div class="hero-band-card">
-          <div class="hero-band-label">Status</div>
-          <div class="hero-band-value" id="km-status-label">Loading...</div>
-        </div>
-        <div class="hero-band-card">
-          <div class="hero-band-label">Top concern</div>
-          <div class="hero-band-value" id="km-top-concern">Loading...</div>
-        </div>
-        <div class="hero-band-card">
-          <div class="hero-band-label">Next review</div>
-          <div class="hero-band-value" id="km-next-review">Loading...</div>
-        </div>
-      </div>
-    </div>
-    <div class="cockpit-card">
-      <div class="section-title">
-        <h3>Service decision lens</h3>
-        <span class="section-pill">What matters now</span>
-      </div>
-      <div class="gauge-wrap">
-        <div class="risk-gauge" id="km-risk-gauge">
-          <div class="risk-gauge-core">
-            <strong id="km-risk-score">72</strong>
-            <span>risk mix</span>
-          </div>
-        </div>
-        <div class="gauge-legend">
-          <div class="legend-row"><span class="legend-dot critical"></span><span>Support execution pressure</span></div>
-          <div class="legend-row"><span class="legend-dot watch"></span><span>Escalation and delivery watch-outs</span></div>
-          <div class="legend-row"><span class="legend-dot stable"></span><span>Ownership and program coverage</span></div>
-        </div>
-      </div>
-      <p id="km-dan-guidance" style="margin-top:18px;">This panel should tell the team whether the customer is stable, where the service risk is coming from, and what the next Microsoft action should be.</p>
-      <div class="story-badges">
-        <span class="story-badge">Risk-led</span>
-        <span class="story-badge">Actionable</span>
-        <span class="story-badge">Review-ready</span>
-      </div>
-    </div>
-  </div>
-  <div class="metric-grid">
-    <div class="metric-card">
-      <div class="metric-label">Open MCS Backlog</div>
-      <div class="metric-value" id="km-open-cases">Loading...</div>
-      <div class="metric-subtext" id="km-open-cases-note">Loading...</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-label">Open Sev A/B</div>
-      <div class="metric-value alert" id="km-sev-ab">Loading...</div>
-      <div class="metric-subtext" id="km-sev-ab-note">Loading...</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-label">ICM-Linked Cases</div>
-      <div class="metric-value" id="km-mcs-linked">Loading...</div>
-      <div class="metric-subtext" id="km-mcs-linked-note">Loading...</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-label">IR Met</div>
-      <div class="metric-value good" id="km-ir-rate">Loading...</div>
-      <div class="metric-subtext" id="km-ir-rate-note">Loading...</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-label">Most Pressured Product</div>
-      <div class="metric-value" id="km-top-product">Loading...</div>
-      <div class="metric-subtext" id="km-top-product-note">Loading...</div>
-    </div>
-    <div class="metric-card">
-      <div class="metric-label">Customer Trust Risk</div>
-      <div class="metric-value" id="km-crm-momentum">Loading...</div>
-      <div class="metric-subtext" id="km-crm-momentum-note">Loading...</div>
-    </div>
-  </div>
-  </div>
-  <div class="executive-block">
-    <div class="pane-header"><h2>3. Power BI Insights</h2><p>Filtered active-case signals from the MCSfMSC semantic model via Power BI MCP</p></div>
-    <div class="chart-grid">
-      <div class="story-card">
-        <h3>Filtered active-case pattern</h3>
-        <p id="km-semantic-summary">Loading...</p>
-        <div class="story-badges">
-          <a class="story-badge" id="km-semantic-source" href="#" target="_blank" rel="noopener noreferrer">Semantic model unavailable</a>
-          <a class="story-badge" id="km-semantic-report" href="#" target="_blank" rel="noopener noreferrer">Report unavailable</a>
-        </div>
-      </div>
-      <div class="insight-card">
-        <div class="info-label">Trend Readout</div>
-        <h3>What changed in backlog shape</h3>
-        <div class="insight-list">
-          <div class="insight-item"><strong>Trend</strong><span id="km-semantic-trend-summary">Loading...</span></div>
-          <div class="insight-item"><strong>Age mix</strong><span id="km-semantic-age-summary">Loading...</span></div>
-          <div class="insight-item"><strong>Status bottleneck</strong><span id="km-semantic-status-summary">Loading...</span></div>
-          <div class="insight-item"><strong>Product concentration</strong><span id="km-semantic-product-summary">Loading...</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="chart-grid">
-      <div class="chart-card">
-        <div class="section-title">
-          <h3>Age Mix</h3>
-          <span class="section-pill">Current backlog</span>
-        </div>
-        <div class="bar-list" id="km-semantic-age-bars"></div>
-      </div>
-      <div class="chart-card">
-        <div class="section-title">
-          <h3>Product Concentration</h3>
-          <span class="section-pill">Active cases</span>
-        </div>
-        <div class="bar-list" id="km-semantic-product-bars"></div>
-      </div>
-    </div>
-    <div class="chart-grid">
-      <div class="chart-card">
-        <div class="section-title">
-          <h3>Status Bottlenecks</h3>
-          <span class="section-pill">Where cases are waiting</span>
-        </div>
-        <div class="insight-list" id="km-semantic-status-list"></div>
-      </div>
-      <div class="chart-card">
-        <div class="section-title">
-          <h3>Trend Highlights</h3>
-          <span class="section-pill">Recent movement</span>
-        </div>
-        <div class="timeline" id="km-semantic-trend-list"></div>
-      </div>
-    </div>
-  </div>
-  <div class="executive-block">
-    <div class="pane-header"><h2>4. Top Risks</h2><p>Where should we focus</p></div>
-    <div class="risk-grid" id="km-top-risks"></div>
-  </div>
-  <div class="executive-block">
-    <div class="pane-header"><h2>5. Escalation Health</h2><p>Is support execution creating or amplifying customer risk</p></div>
-  <div class="chart-grid">
-    <div class="chart-card">
-      <div class="section-title">
-        <h3>Aging and Severity Pattern</h3>
-        <span class="section-pill">Support posture</span>
-      </div>
-      <div class="chart-subtitle">Backlog, severity, and escalation concentration in one read</div>
-      <div class="stack-bar">
-        <div class="stack-seg-open" id="km-stack-open" style="width:40%"></div>
-        <div class="stack-seg-sev" id="km-stack-sev" style="width:35%"></div>
-        <div class="stack-seg-icm" id="km-stack-icm" style="width:25%"></div>
-      </div>
-      <div class="stack-metrics">
-        <div class="stack-metric"><strong id="km-open-cases-mini">0</strong><span>Open backlog</span></div>
-        <div class="stack-metric"><strong id="km-sev-mini">0</strong><span>Sev A/B</span></div>
-        <div class="stack-metric"><strong id="km-icm-mini">0</strong><span>MCS/ICM</span></div>
-      </div>
-    </div>
-    <div class="chart-card">
-      <div class="section-title">
-        <h3>Execution Watch-outs</h3>
-        <span class="section-pill">Support motion</span>
-      </div>
-      <div class="chart-subtitle">Signals that support execution may be amplifying customer risk</div>
-      <div class="insight-list" id="km-escalation-health-list"></div>
-    </div>
-  </div>
-  </div>
-  <div class="executive-block">
-    <div class="pane-header"><h2>6. Product Gaps And Next Moves</h2><p>What needs product ownership versus service execution follow-through</p></div>
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-label">Recovery Plan And Ownership</div>
-      <div class="info-value" id="km-improvement-plan">Loading...</div>
-    </div>
-    <div class="info-card">
-      <div class="info-label">Open DCR / Feature Evidence</div>
-      <div class="info-value" id="km-dcr-summary">Loading...</div>
-    </div>
-  </div>
-  <div class="insight-grid">
-    <div class="insight-card">
-      <div class="info-label">Product Gaps</div>
-      <h3>Which support issues are actually product gaps</h3>
-      <div class="insight-list" id="km-product-gaps"></div>
-    </div>
-    <div class="insight-card">
-      <div class="info-label">Actions And Ownership</div>
-      <h3>What Microsoft should do next</h3>
-      <div class="insight-list" id="km-crm-signals"></div>
-    </div>
-  </div>
-  <div class="knowme-panels">
-    <div class="info-card knowme-panel">
-      <div class="info-label">Why This Customer Matters For Service</div>
-      <div class="info-value" id="km-overview">Loading...</div>
-    </div>
-    <div class="info-card knowme-panel">
-      <div class="info-label">Delivery Constraints And Watch-Outs</div>
-      <div class="info-value" id="km-key-things">Loading...</div>
-    </div>
-  </div>
-  </div>
-  <!-- CRM edit links -->
-  <div class="pane-header" style="margin-top:16px;"><h2>Customer Actions</h2><p>Customer-specific CRM jump plus supporting reference content</p></div>
-  <div class="res-grid">
-    <a class="res-card" id="km-crm-record" href="#" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Program Participant Record (CRM)</div><div class="rc-desc">Open the selected customer's CRM participant record</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/Shared%20Documents/Forms/DispForm.aspx?ID=111&web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Contact Management (CRM)</div><div class="rc-desc">CRM contacts walkthrough and update guidance</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/Shared%20Documents/Forms/DispForm.aspx?ID=116&web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Contract & Entitlements (CRM)</div><div class="rc-desc">CRM engagements walkthrough for contract and entitlement workflows</div></div><span class="rc-arrow">→</span></a>
-    <a class="res-card" href="https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/How-to-track-MCS-customers.aspx?web=1" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Deliverables Tracker (CRM)</div><div class="rc-desc">Open MCS customer tracking guidance and deliverables workflow details</div></div><span class="rc-arrow">→</span></a>
   </div>
 </div>
 
@@ -686,7 +288,7 @@ body { font-family:'Inter','Segoe UI Variable',system-ui,sans-serif; background:
 <div class="pane" id="planning">
   <div class="pane-header"><h2>Planning</h2><p>Top-level ADO links for CLE team wiki and sprint planning dashboard</p></div>
   <div class="res-grid">
-    <a class="res-card" href="https://dev.azure.com/MSEC-CxE/CxE%20Security%20Care/_wiki/wikis/CxE-Security-Care.wiki/306/Customer-Lead-Engineering-(CLE)-Team" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">CLE Team Wiki</div><div class="rc-desc">Top-level CLE team planning and operating context</div></div><span class="rc-arrow">→</span></a>
+    <div class="res-card static-card"><div class="rc-info"><div class="rc-title">CLE Team Planning Dashboard</div><div class="rc-desc">Top-level CLE team planning and operating context</div></div></div>
     <a class="res-card" href="https://dev.azure.com/MSEC-CxE/CxE%20Security%20Care/_dashboards/dashboard/696053df-70fb-4b46-8cc5-1c82faabcb4c" target="_blank" rel="noopener noreferrer"><div class="rc-info"><div class="rc-title">Sprint Planning Dashboard</div><div class="rc-desc">Sprint planning dashboard and backlog tracking</div></div><span class="rc-arrow">→</span></a>
   </div>
 </div>
@@ -763,7 +365,7 @@ function showTab(id) {
   var pane = document.getElementById(id);
   if(pane) pane.classList.add('active');
   var pills = document.querySelectorAll('.cat-pill');
-  var names = ['playbooks','knowme','reports','training','planning','ai','feedback'];
+  var names = ['playbooks','reports','training','planning','ai','feedback'];
   for(var i=0;i<pills.length;i++){ if(names[i]===id) pills[i].classList.add('active'); }
 }
 function filterPlaybooks(feature, el) {
@@ -879,18 +481,6 @@ function buildPortalSearchIndex() {
         href: card.getAttribute('href') || '',
         keywords: [paneLabel, paneId, feature, card.id || ''].join(' ')
       });
-    });
-  });
-
-  knowMeCustomers.forEach(function(customer, index) {
-    entries.push({
-      kind: 'customer',
-      title: customer.customerName || 'Unknown customer',
-      description: [customer.topImpactedProduct, customer.ownerName, customer.technologyVertical].filter(Boolean).join(' | ') || 'Open Know Me customer view',
-      paneId: 'knowme',
-      paneLabel: 'Know Me',
-      customerIndex: index,
-      keywords: [customer.tenantId, customer.customerOverview, customer.keyThingsToKnow, customer.topImpactedProduct].filter(Boolean).join(' ')
     });
   });
 
