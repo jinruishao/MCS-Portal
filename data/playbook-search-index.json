@@ -1,0 +1,242 @@
+[
+  {
+    "kind": "sub-playbook",
+    "title": "Direct Connect",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Escalate-to-Engineering.aspx",
+    "keywords": "issue resolution direct connect engineering escalation mcsfmsc",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "DFM Case Routing",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/MSCfMSC-SED-Case-Routing-%26-Scope.aspx",
+    "keywords": "issue resolution dfm case routing scope mcsfmsc",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Mission Critical Services DFM Customer Program Stamping Solution",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/DFM-Customer-Program-Stamping-Solution.aspx",
+    "keywords": "issue resolution dfm customer program stamping solution mission critical services",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "RCA Playbook",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Root-Cause-Analysis-(RCA).aspx",
+    "keywords": "issue resolution rca playbook root cause analysis",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "MCSfMSC IcM Stamping Solution",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/MCSfMSC-IcM-Stamping-Solution.aspx",
+    "keywords": "issue resolution icm stamping solution mcsfmsc",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Care/PHE team On-Call",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/On-Call.aspx",
+    "keywords": "issue resolution care phe team on call",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Business Impact Statements",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Business-Impact-Statements.aspx",
+    "keywords": "issue resolution business impact statements bis",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "MSEC CEN Guidelines",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/CEN-Models.aspx",
+    "keywords": "issue resolution msec cen guidelines",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "MCSfMSC Support Products",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/MCSfMSC-Support-Products-Scope.aspx",
+    "keywords": "issue resolution mcsfmsc support products scope",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "xED Engagement Model",
+    "description": "Issue Resolution · MCSfMSC Playbooks",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/xED-Engagement-Model.aspx",
+    "keywords": "issue resolution xed engagement model",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Care/PHE Intune team Escalation",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Care-PHE-Intune-Escalation-Instructions.aspx",
+    "keywords": "issue resolution css care phe intune escalation mcsfmsc customers",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Care/PHE Purview team Escalation",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/CEM-Purview-Escalation.aspx",
+    "keywords": "issue resolution css care phe purview escalation mcsfmsc customers",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Care/PHE MTP team Escalation",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/CEM-MDE-MDI-MDA-Escalation-Instructions.aspx",
+    "keywords": "issue resolution css care phe mtp mde mdi mda escalation mcsfmsc customers",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Care/PHE Entra team Escalation",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Entra-Escalation-Process.aspx",
+    "keywords": "issue resolution css care phe entra escalation mcsfmsc customers",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Care/PHE MDO team Escalation",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/CEM-MDO-Escalation.aspx",
+    "keywords": "issue resolution css care phe mdo escalation mcsfmsc customers",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Care/PHE Security Copilot Escalation workflow",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Security%20Copilot-Escalation.aspx",
+    "keywords": "issue resolution css care phe security copilot escalation workflow mcsfmsc customers",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "R&R b/w SCIM CSS & Care/PHE during IcM CRI engagement",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Roles%20and%20responsibility%20between%20SCIM%20and%20CEM.aspx",
+    "keywords": "issue resolution css care phe scim icm cri roles responsibilities",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Instructions -> Meeting Invite for Customers",
+    "description": "Issue Resolution · CSS to Care/PHE Escalation path for MCSfMSC Customers",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Set-up-Bridge-meeting-Invite-for-Customers.aspx",
+    "keywords": "issue resolution css care phe meeting invite customers setup bridge",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "DFM Access",
+    "description": "Issue Resolution · Tools Solutions",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/DfM%20Tool%20Access.aspx",
+    "keywords": "issue resolution tools solutions dfm access",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "DFM Auto JIT for IcM Stakeholders",
+    "description": "Issue Resolution · Tools Solutions",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/DfM%20Auto%20JIT%20for%20IcM%20DRI.aspx",
+    "keywords": "issue resolution tools solutions dfm auto jit icm stakeholders dri",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "DFM ACE Auto JIT Feature for PHE teams",
+    "description": "Issue Resolution · Tools Solutions",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Auto-JIT-Approval.aspx",
+    "keywords": "issue resolution tools solutions dfm ace auto jit phe teams approval",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "DFM JEA L5 Cross-boundary access",
+    "description": "Issue Resolution · Tools Solutions",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/DFM-JEA-L5-Cross-boundry-access.aspx",
+    "keywords": "issue resolution tools solutions dfm jea l5 cross boundary access",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "ASC Auto JIT Integration",
+    "description": "Issue Resolution · Tools Solutions",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/ASC%20JIT.aspx",
+    "keywords": "issue resolution tools solutions asc auto jit integration",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  },
+  {
+    "kind": "sub-playbook",
+    "title": "Assist 365 Auto JIT & Time-based JIT for CEM",
+    "description": "Issue Resolution · Tools Solutions",
+    "paneId": "playbooks",
+    "paneLabel": "Playbooks",
+    "href": "https://microsoft.sharepoint-df.com/sites/CxE-Security-Care/SitePages/Assist365.aspx",
+    "keywords": "issue resolution tools solutions assist 365 auto jit time based jit cem",
+    "targetSelector": "#playbooks-grid .res-card[data-feature=\"issue-resolution\"]"
+  }
+]
